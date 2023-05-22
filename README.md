@@ -16,12 +16,18 @@ You can either:
 
 ### Provide API key and prompt
 
-```
+```swift
 let messages: [OpenAIAPI.Message] = [
     .init(role: .system, content: "You are a helpful assistant. Answer in one sentence if possible."),
     .init(role: .user, content: prompt)
 ]
 let api = OpenAIAPI(apiKey: key)
+```
+
+### Customize the endpoint
+```swift
+api.textCompletionEndPoint = "https://api.openai.com/v1/chat/completions" // default to OpenAI
+api.chatCompletionEndPoint = "https://api.openai.com/v1/completions" // default to OpenAI
 ```
 
 ### Option A: Generate text (streaming, asyncStream)
@@ -39,7 +45,7 @@ Task {
 
 ### Option B: Generate text (non-streaming, async/await)
 
-```
+```swift
 Task {
     do {
         self.completedText = try await api.completeChat(.init(messages: messages))
