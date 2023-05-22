@@ -3,7 +3,8 @@ import Foundation
 public struct OpenAIAPI {
     var apiKey: String
     var orgId: String?
-    var origin = "https://api.openai.com"
+    var textCompletionEndPoint = "https://api.openai.com/v1/chat/completions"
+    var chatCompletionEndPoint = "https://api.openai.com/v1/completions"
 
     public init(apiKey: String, orgId: String? = nil, origin: String? = nil) {
         self.apiKey = apiKey
