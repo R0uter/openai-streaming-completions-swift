@@ -9,13 +9,15 @@ extension OpenAIAPI {
         var temperature: Double = 0.2
         var stream = false
         var stop: [String]?
+        var user: String?
 
-        public init(prompt: String, model: String = "text-davinci-003", max_tokens: Int = 1500, temperature: Double = 0.2, stop: [String]? = nil) {
+        public init(prompt: String, model: String = "text-davinci-003", max_tokens: Int = 1500, temperature: Double = 0.2, stop: [String]? = nil, user: String? = nil) {
             self.prompt = prompt
             self.model = model
             self.max_tokens = max_tokens
             self.temperature = temperature
             self.stop = stop
+            self.user = user
         }
     }
 
