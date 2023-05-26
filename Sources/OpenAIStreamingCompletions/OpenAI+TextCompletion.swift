@@ -96,5 +96,5 @@ public class StreamingCompletion: ObservableObject {
     @Published public var status = Status.loading
     @Published public var text: String = ""
 
-    init() {}
+    public init() {}
 }
